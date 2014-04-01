@@ -8,6 +8,13 @@ get '/' do
 end
 
 get '/contacts' do
+  @contacts_page_title = "All Contacts"
+
+  @contacts = []
+  @contacts << Contacts.new("Julie", "Hache", "julie@bitmakerlabs.com", "Instructor", "The assignment is up!")
+  @contacts << Contacts.new("Will", "Richman", "will@bitmakerlabs.com", "Co-Founder", "Keep Bitmaking, bitmakers!")
+  @contacts << Contacts.new("Chris", "Johnston", "chris@bitmakerlabs.com", "Instructor", "Alriiiiiight")
+
   erb :contacts
 end
 
