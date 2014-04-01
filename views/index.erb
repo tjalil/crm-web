@@ -1,12 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title><%= @crm_app_name %> </title>
+    <h1 id = "center">Welcome to <%= @crm_app_name %>!</h1>
+    <p id = "center">Created on <%= @create_time%></p>
+  </head>
 
-<link rel="stylesheet" type="text/css" href="style.css">
-<body>
-  <h1>Welcome to <%= @crm_app_name %>!</h1>
-  <p>Created on <%= @create_time%></p>
+  <body>
+    <h3>Main Menu</h3>
+      <p><a href="/contacts/new">Add a contact</a></p>
+      <p><a href="/contacts/:id">Display a contact</a></p>
+      <p><a href="/contacts/:id/remove">Remove a contact</a></p>
+      <p><a href="/contacts/:id/edit">Edit a contact</a></p>
+      <p><a href="/contacts">Display all contacts</a></p>
+      <p><a href="/contacts">Display all contacts by attributes</a></p>
+      <p><a href="/contacts/:id/notes">Add notes for an existing contact</a></p>
 
-  <h3>Main Menu</h3>
-  <ul>
-    <a href="/contacts">View all contacts</a>
-    <!-- please complete me with links to other actions -->
-  </ul>
-</body>
+      <!-- please complete me with links to other actions -->
+  </body>
+</html>
