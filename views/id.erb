@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title><%= @id_page_title %> </title>
+    <div class = "center">
+      <h1>All Contacts</h1>
+    </div>
+  </head>
+
+  <body>
+    <form action="/contacts" method="post">
+      <p><strong>ID:</strong> <input type="text" name="id">
+      <p><input type="submit" name="Submit"></p>
+    </form>
+  </body>
+</html>

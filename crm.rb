@@ -21,7 +21,9 @@ get '/contacts/new' do
 end
 
 get '/contacts/:id' do
-  #do something
+  @id_page_title = "Insert ID"
+  erb :id
+  #need to redirect to either 'edit', 'remove', 'notes'
 end
 
 get '/contacts/:id/edit' do
