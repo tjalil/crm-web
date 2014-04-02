@@ -37,7 +37,7 @@ get '/contacts/:id/notes' do
 end
 
 post '/contacts' do
-  new_contact = Contacts.new(params[:first_name], params[:last_name], params[:email], params[:note])
+  new_contact = Contacts.new(params[:first_name], params[:last_name], params[:email], params[:note], params[:time_created])
   @@rolodex.add_contact(new_contact)
   redirect to('/contacts')
 end

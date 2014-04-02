@@ -8,9 +8,11 @@
 
   <body>
     <% @@rolodex.contacts.each do |contact| %>
+      <p><strong>ID:</strong> <%= contact.id %></p>
       <p><strong>Name:</strong> <%= contact.first_name %> <%= contact.last_name %></p>
       <p><strong>Email:</strong> <%= contact.email %></p>
       <p><strong>Notes:</strong> <%= contact.notes %></p>
+      <p>Contact created on <%= contact.time_created %></p>
       <p>----------</p>
     <% end %>
   </body>
