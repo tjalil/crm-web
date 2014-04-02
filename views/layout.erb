@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <title><%= yield_content :title %></title>
+  </head>
+  
+  <body>
+    <div class="navbar">
+      Taha's CRM
+    </div>
+    <div>
+      <h1><%= yield_content :title %></h1>
+      <%= yield %>
+    </div>
+
+
+    <footer>
+      <a href="https://github.com/tjalil/crm-web">Source Code</a>
+    </footer>
+  </body>
+</html>
+

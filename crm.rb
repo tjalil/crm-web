@@ -1,44 +1,43 @@
 require_relative 'rolodex'
 require_relative 'contacts'
 require 'sinatra'
+require 'sinatra/content_for'
 
 @@rolodex = Rolodex.new
 
 get '/' do
-  @crm_app_name = "My CRM"
   @create_time = Time.new.strftime("%m-%d-%Y at %H:%M:%S")
   erb :index
 end
 
 get '/contacts' do
-  @contacts_page_title = "All Contacts"
   erb :contacts
 end
 
 get '/contacts/new' do
-  @new_contacts_title = "Add New Contact"
   erb :new_contact
 end
 
 get '/contacts/:id' do
-  @id_page_title = "Insert ID"
   erb :id
-  #need to redirect to either 'edit', 'remove', 'notes'
 end
 
 get '/contacts/:id/edit' do
-  @edit_page_title = "Edit A Contact"
   erb :edit
 end
 
 get '/contacts/:id/remove' do
-  @remove_page_title = "Remove A Contact"
   erb :remove
 end
 
 get '/contacts/:id/notes' do
-  @notes_page_title = "Add A Note"
   erb :notes
+end
+
+post '/contacts/:id' do
+  @@rolodex.get_user_id(contact)
+  redirect to('/contacts')
+  #need to redirect to either 'edit', 'remove', 'notes'
 end
 
 post '/contacts' do
@@ -51,3 +50,6 @@ post '/contacts/:id/remove' do
   @@rolodex.remove_contact(contact)
   redirect to('/contacts')
 end
+
+
+

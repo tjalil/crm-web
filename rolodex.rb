@@ -13,6 +13,14 @@ class Rolodex
     @id += 1
   end
 
+  def get_user_id(contact)
+    @contacts.each do |contact|
+      if contact.id == @id
+        #do something
+      end
+    end
+  end
+
   def remove_contact(contact)
     contact.id = @id
   end

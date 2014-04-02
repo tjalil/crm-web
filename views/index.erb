@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title><%= @crm_app_name %> </title>
-    <div class = "center">
-      <h1>Welcome to <%= @crm_app_name %>!</h1>
-      <p>Created on <%= @create_time%></p>
-  </div>
-  </head>
+<% content_for :title do %>
+  Main Menu
+<% end %>
 
-  <body>
-    <h3>Main Menu</h3>
-      <p><a href="/contacts/new">Add a contact</a></p>
-      <p><a href="/contacts/:id">Display a contact</a></p>
-      <p><a href="/contacts/:id/remove">Remove a contact</a></p>
-      <p><a href="/contacts/:id/edit">Edit a contact</a></p>
-      <p><a href="/contacts">Display all contacts</a></p>
-      <p><a href="/contacts">Display all contacts by attributes</a></p>
-      <p><a href="/contacts/:id/notes">Add notes for an existing contact</a></p>
+<p><a href="/contacts/new">Add a contact</a></p>
+<p><a href="/contacts/:id">Display a contact</a></p>
+<p><a href="/contacts/:id/remove">Remove a contact</a></p>
+<p><a href="/contacts/:id/edit">Edit a contact</a></p>
+<p><a href="/contacts">Display all contacts</a></p>
+<p><a href="/contacts">Display all contacts by attributes</a></p>
+<p><a href="/contacts/:id/notes">Add notes for an existing contact</a></p>
 
-      <!-- please complete me with links to other actions -->
-  </body>
-</html>
+  <!-- please complete me with links to other actions -->
