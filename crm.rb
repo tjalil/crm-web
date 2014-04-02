@@ -16,7 +16,8 @@ get '/contacts' do
 end
 
 get '/contacts/new' do
-  #do something
+  @new_contacts_title = "Add New Contact"
+  erb :new_contact
 end
 
 get '/contacts/:id' do
