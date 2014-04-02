@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title><%= @contacts_page_title %> </title>
+    <div class = "center">
+      <h1>All Contacts</h1>
+    </div>
+  </head>
+
+  <body>
+    <% @@rolodex.contacts.delete_if do |contact| %>
+      <% contact.id == id %>
+    <% end %>
+  </body>
+</html>

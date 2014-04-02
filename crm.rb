@@ -25,19 +25,27 @@ get '/contacts/:id' do
 end
 
 get '/contacts/:id/edit' do
-  #do something
+  @edit_page_title = "Edit A Contact"
+  erb :edit
 end
 
 get '/contacts/:id/remove' do
-  #do something
+  @remove_page_title = "Remove A Contact"
+  erb :remove
 end
 
 get '/contacts/:id/notes' do
-  #do something
+  @notes_page_title = "Add A Note"
+  erb :notes
 end
 
 post '/contacts' do
   new_contact = Contacts.new(params[:first_name], params[:last_name], params[:email], params[:note], params[:time_created])
   @@rolodex.add_contact(new_contact)
+  redirect to('/contacts')
+end
+
+post '/contacts/:id/remove' do
+  @@rolodex.remove_contact(contact)
   redirect to('/contacts')
 end
