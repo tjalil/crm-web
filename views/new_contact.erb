@@ -2,10 +2,36 @@
   Add a New Contact
 <% end %>
 
-<form action="/contacts" method="post">
-  <p><strong>First Name:</strong> <input type="text" name="first_name"></p>
-  <p><strong>Last Name:</strong> <input type="text" name="last_name"></p>
-  <p><strong>Email:</strong> <input type="text" name="email"></p>
-  <p><strong>Note:</strong> <input type="text" name="note"></p>
-  <p><input type="submit" name="Submit"></p>
+<form action="/contacts" method="POST" class="new_contact">
+  <fieldset>
+    <legend>New Contact</legend>
+    <div id="first_name">
+      <label for="first_name">First Name: </label>
+      <br>
+      <input type="text" name="first_name" id="first_name_input" required="required" placeholder="First Name"/>
+    </div>
+
+    <div id="last_name">
+      <label for="last_name">Last Name: </label>
+      <br>
+      <input type="text" name="last_name" id="last_name_input" required="required" placeholder="Last Name"/>
+    </div>
+
+    <div id="email">
+      <label for="email">Email: </label>
+      <br>
+      <input type="text" name="email" id="email_input" required="required" placeholder="Email"/>
+    </div>    
+
+    <div id="notes">
+      <label for="notes">Notes: </label>
+      <br>
+      <textarea name="notes" id="notes_input" placeholder="Add notes about contact"></textarea>
+    </div>
+
+    <div id="new_contact_btns">
+      <input type="submit" name="submit" value="Add Contact"/>
+      <input type="submit" name="submit" value="Cancel"/>
+    </div>
+  </fieldset>
 </form>

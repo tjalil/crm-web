@@ -119,3 +119,73 @@ color: black;
 {
   height: 20px;
 }
+
+.new_contact
+{
+  width: 400px;
+  /*border: 1px solid #999;*/
+  /*border-radius: 8px;
+  box-shadow: 0 0 10px #999;
+  background-color: rgba(255,255,255,0.2);*/
+}
+
+#first_name, #last_name, #email, #notes_input
+{
+  height: 5rem;
+}
+
+#first_name_input, #last_name_input, #email_input, #notes_input
+{
+  margin-left: 40px;
+  width: 400px;
+  height: 20px;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: 0px 0px 5px 0px white;
+  -moz-box-shadow: 0px 0px 5px 0px white;
+  box-shadow: 0px 0px 5px 0px white;
+}
+
+#notes_input
+{
+  height: 100px;
+}
+
+#new_contact_btns
+{
+  /*margin-left: 20px;*/
+  text-align: center;
+  margin-top: 20px;
+}
+
+.new_contact label
+{
+  margin-left: 20px;  
+}
+
+.new_contact legend
+{
+  font-weight: bold;
+}
+
+input[type=submit]
+{
+  font-family: 'Julius Sans One', sans-serif;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 10rem;
+  height: 3rem;
+  background-color: rgba(236, 240, 241, 0.5);
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 5px 0px white;
+}
+
+input[type=submit]:hover
+{
+  background-color: rgba(236, 240, 241, 1);
+}
+
+
