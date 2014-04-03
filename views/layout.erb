@@ -7,17 +7,17 @@
   
   <body>
     <div class="navbar">
-      Taha's CRM
+      CRM <span>by Taha Jalil<span>
     </div>
-    <div>
+    <div class = "content">
       <h1><%= yield_content :title %></h1>
       <%= yield %>
+      <div class = "push"></div>
     </div>
 
-
-    <footer>
+    <div class = "footer">
       <a href="https://github.com/tjalil/crm-web">Source Code</a>
-    </footer>
+    </div>
   </body>
 </html>
 

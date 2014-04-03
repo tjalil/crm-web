@@ -1,4 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Marcellus+SC);*/
+/*@import url(http://fonts.googleapis.com/css?family=Marcellus+SC);*/
+/*@import url(http://fonts.googleapis.com/css?family=Poiret+One);*/
+/*@import url(http://fonts.googleapis.com/css?family=Pontano+Sans);*/
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One);
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -21,14 +24,95 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-body {
-  font-family: 'Marcellus SC', serif;
-  color: #2c3e50;
-  /*font-family: Helvetica, Arial, sans-serif;*/
-  background-color: #bdc3c7;
+*
+{
+  margin: 0px;
+}
+
+html, body
+{
+  font-family: 'Julius Sans One', sans-serif;
+  height: 100%;
+  background: url('http://newevolutiondesigns.com/images/freebies/retro-wallpaper-1.jpg');
+}
+
+.content 
+{
+  text-indent: 20px;
+  padding-top: 70px;
+  min-height: 100%;
+  height: 100%;
+  margin: 0 auto -95px;
+  line-height: 2em;
+  color: white;
+}
+
+.content h1
+{
+  text-indent: 10px;
 }
 
 a 
 {
   text-decoration: none;
+  color: white;
+}
+
+.navbar 
+{
+color: white;
+font-size: 2em;
+position: fixed;
+top: 0px;
+width: 100%;
+height: 35px;
+text-align: left;
+text-indent: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: -5px;
+-webkit-box-shadow: 0px 0px 8px 0px #000000;
+-moz-box-shadow: 0px 0px 8px 0px #000000;
+box-shadow: 0px 0px 8px 0px #000000;
+background-color: rgba(27,64,99,0.2);
+}
+
+.navbar span
+{
+  font-size: 1rem;
+}
+
+/*Add a button to take us to the homepage*/
+/*.navbar a {
+font-size: 14px;
+padding-left: 15px;
+padding-right: 15px;
+color: white;
+}*/
+
+a:hover {
+color: black;
+} 
+
+.footer
+{
+  background-color: rgba(27,64,99,0.2);
+  text-align: center;
+  bottom: 0px;
+  width: 100%;
+  padding-left: -5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-bottom: -20px;
+}
+
+.footer a
+{
+  color: white;
+  font-size: 0.8em;
+}
+
+.footer, .push
+{
+  height: 20px;
 }
