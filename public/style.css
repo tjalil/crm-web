@@ -61,6 +61,11 @@ a
   color: white;
 }
 
+a:hover 
+{
+color: black;
+} 
+
 .navbar 
 {
 color: white;
@@ -85,18 +90,6 @@ background-color: rgba(27,64,99,0.2);
   font-size: 1rem;
 }
 
-/*Add a button to take us to the homepage*/
-/*.navbar a {
-font-size: 14px;
-padding-left: 15px;
-padding-right: 15px;
-color: white;
-}*/
-
-a:hover {
-color: black;
-} 
-
 .footer
 {
   position: fixed;
@@ -113,6 +106,11 @@ color: black;
 {
   color: white;
   font-size: 0.8em;
+}
+
+.footer a:hover
+{
+  color: black;
 }
 
 .footer, .push

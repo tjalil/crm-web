@@ -1,28 +1,31 @@
 class Rolodex
   attr_reader :contacts
 
+  @@id = 1000
+
   def initialize
     @contacts = []
-    @id = 1000
   end
 
-  def add_contact(contact)
-    contact.id = @id
-    contact.time_created = Time.new.strftime("%m-%d-%Y at %H:%M:%S")
+  def add_contact(first_name, last_name, email, notes)
+    contact = Contact.new(first_name, last_name, email, notes)
+    contact.id = Rolodex.get_id
+    #contact.time_created = Time.new.strftime("%m-%d-%Y at %H:%M:%S")
     @contacts << contact
-    @id += 1
   end
 
-  def get_user_id(contact)
-    @contacts.each do |contact|
-      if contact.id == @id
-        #do something
-      end
+  def find(contact_id)
+    @contacts.find do |contact|
+      contact.id == contact_id
     end
   end
 
   def remove_contact(contact)
     contact.id = @id
+  end
+
+  def self.get_id
+    @@id += 1
   end
 
 end
