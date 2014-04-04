@@ -28,7 +28,12 @@ get "/contacts/:id" do
 end
 
 get '/contacts/:id/edit' do
-  erb :edit
+  @contact = @@rolodex.find(params[:id].to_i)
+  if @contact
+    erb :edit_contact
+  else
+    raise Sinatra::NotFound
+  end
 end
 
 get '/contacts/:id/remove' do
@@ -43,7 +48,6 @@ post '/contacts/id' do
   @@rolodex.find(params[:id].to_i)
   redirect = "/contacts/#{params[:id].to_i}"
   redirect to(redirect)
-  # need to redirect to either 'edit', 'remove', 'notes'
 end
 
 post '/contacts' do
