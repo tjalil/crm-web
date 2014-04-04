@@ -190,6 +190,11 @@ input[type=submit]:hover, input[type=button]:hover
   background-color: rgba(236, 240, 241, 1);
 }
 
+input[type=button]
+{
+  margin-left: 10px;
+}
+
 .add_contact, .display_contact
 {
   font-weight: bold;
@@ -226,5 +231,14 @@ input[type=submit]:hover, input[type=button]:hover
   margin-top: 10rem;
 }
 
+.delete_contact_btn
+{
+  float: left;
+
+}
+.edit_contact_btn
+{
+  clear: right;
+}
 
 

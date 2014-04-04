@@ -7,11 +7,12 @@
 <p><strong>Email:</strong> <%= @contact.email %></p>
 <p><strong>Notes:</strong> <%= @contact.notes %></p>
 
-<form action="/contacts/<%= @contact.id %>" method="POST">
+
+<form class="delete_contact_btn" action="/contacts/<%= @contact.id %>" method="POST">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" name="delete contact" value="Delete Contact">
 </form>
 
-<form action="/contacts/<%= @contact.id %>/edit" method="GET">
+<form class="edit_contact_btn" action="/contacts/<%= @contact.id %>/edit" method="GET">
   <input type="submit" name="edit contact" value="Edit Contact">
 </form>
