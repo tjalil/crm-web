@@ -21,7 +21,7 @@ class Rolodex
   end
 
   def remove_contact(contact)
-    contact.id = @id
+    @contacts.delete(contact)
   end
 
   def self.get_id

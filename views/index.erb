@@ -7,17 +7,22 @@
   </div>
   <div>
     <form method="POST" action="/contacts/id">
-    <p>
-      Enter ID to display a contact
-      <input type="text" name="id" id="id_input" required="required" placeholder="ID"/>
-    </p>
+      <p>
+        Enter ID to display a contact
+        <input type="text" name="id" id="id_input" required="required" placeholder="ID"/>
+      </p>
   </form>
   </div>
   <div>
-    <a href="/contacts/:id/remove">Remove a contact</a>
+    <form method="POST" action="/contacts/edit" >
+      <p>
+        Enter ID to edit a contact 
+        <input type="text" name="id" id="id_input" required="required" placeholder="ID"/>
+      </p>
+    </form>
   </div>
   <div>
-    <a href="/contacts/:id/edit">Edit a contact</a>
+    <a href="/contacts/:id/remove">Remove a contact</a>
   </div>
   <div>
     <a href="/contacts">Display all contacts</a>

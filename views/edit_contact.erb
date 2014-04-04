@@ -2,16 +2,13 @@
   Edit Contact
 <% end %>
 
-<form action="/contacts/<%= @contact.id %>" method="POST">
-  <fieldset>
-    <div class="legend">
-      <legend>Edit Contact</legend>
-    </div>
-    <!-- <input type="hidden" name="_method" value="put"> -->
-    <input type="text" name="first_name" value="<%= @contact.first_name %>">
-    <input type="text" name="last_name" value="<%= @contact.last_name %>">
-    <input type="text" name="email" value="<%= @contact.email %>">
-    <input type="text" name="note" value="<%= @contact.note %>">
-    <input type="submit" name="Submit">
-  </fieldset>
+<h1>Edit a Contact</h1>
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="first_name" value="<%= @contact.first_name %>">
+  <input type="text" name="last_name" value="<%= @contact.last_name %>">
+  <input type="text" name="email" value="<%= @contact.email %>">
+  <input type="text" name="notes" value="<%= @contact.notes %>">
+  <input type="submit" name="Submit">
 </form>

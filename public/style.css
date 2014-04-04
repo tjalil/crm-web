@@ -32,7 +32,7 @@ time, mark, audio, video {
 html, body
 {
   font-family: 'Julius Sans One', sans-serif;
-  background: url('http://newevolutiondesigns.com/images/freebies/retro-wallpaper-1.jpg') no-repeat fixed; /*center center*/
+  background: url('/public/retro-wallpaper-1.jpg') no-repeat fixed; /*center center*/
   /*background-size: cover;
   -o-background-size: cover;
   -mox-background-size: cover;
