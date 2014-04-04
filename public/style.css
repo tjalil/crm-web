@@ -118,14 +118,10 @@ background-color: rgba(27,64,99,0.2);
   height: 20px;
 }
 
-.new_contact
+.basic_box
 {
-  width: 400px;
+  width: 450px;
   margin-top: 30px;
-  /*border: 1px solid #999;*/
-  /*border-radius: 8px;
-  box-shadow: 0 0 10px #999;
-  background-color: rgba(255,255,255,0.2);*/
 }
 
 #first_name, #last_name, #email, #notes_input
@@ -135,14 +131,16 @@ background-color: rgba(27,64,99,0.2);
 
 #first_name_input, #last_name_input, #email_input, #notes_input
 {
+  font-family: 'Julius Sans One', sans-serif;
   margin-left: 40px;
   width: 400px;
-  height: 20px;
+  height: 30px;
   border-radius: 5px;
   border: none;
   -webkit-box-shadow: 0px 0px 5px 0px white;
   -moz-box-shadow: 0px 0px 5px 0px white;
   box-shadow: 0px 0px 5px 0px white;
+  font-size: 1rem;
 }
 
 #notes_input
@@ -157,12 +155,12 @@ background-color: rgba(27,64,99,0.2);
   margin-top: 20px;
 }
 
-.new_contact label
+.basic_box label
 {
   margin-left: 20px;  
 }
 
-.new_contact legend
+.basic_box legend
 {
   font-weight: bold;
   text-align: center;
@@ -192,6 +190,41 @@ input[type=submit]:hover, input[type=button]:hover
   background-color: rgba(236, 240, 241, 1);
 }
 
+.add_contact, .display_contact
+{
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(27,64,99,0.2);
+  font-size: 1.5rem;
+  width: 400px;
+  margin-left: 40px;
+  margin-bottom: 2rem;
+}
+
+#id_input
+{
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.5rem;
+  margin-left: 20px;
+  width: 400px;
+  height: 2rem;
+  border: none;
+  margin-bottom: 2rem;
+  text-align: center;
+  background-color: rgba(236, 240, 241, 1);
+}
+
+#id_input:focus
+{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.add_contact
+{
+  margin-top: 10rem;
+}
 
 
 
