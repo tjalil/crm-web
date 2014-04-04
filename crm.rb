@@ -1,6 +1,8 @@
 require_relative 'rolodex'
+require_relative 'contact'
 require 'sinatra'
 require 'sinatra/content_for'
+require 'debugger'
 
 @@rolodex = Rolodex.new
 
@@ -36,14 +38,6 @@ end
 
 ##### SEARCH CONTACT BY ID STARTS #####
 
-post '/contacts/id' do
-  @@rolodex.find(params[:id].to_i)
-  redirect = "/contacts/#{params[:id].to_i}"
-  redirect to(redirect)
-end
-
-##### SEARCH CONTACT BY ID ENDS #####
-
 get "/contacts/:id" do
   @contact = @@rolodex.find(params[:id].to_i)
   if @contact 
@@ -52,6 +46,15 @@ get "/contacts/:id" do
     raise Sinatra::NotFound
   end
 end
+
+post '/contacts/id' do
+  @@rolodex.find(params[:id].to_i)
+  redirect = "/contacts/#{params[:id].to_i}"
+  redirect to(redirect)
+end
+
+##### SEARCH CONTACT BY ID ENDS #####
+
 
 ##### EDITING CONTACT STARTS #####
 
@@ -68,14 +71,13 @@ get '/contacts/:id/edit' do
   end
 end
 
-put "/contacts/id" do
+put "/contacts/:id" do
   @contact = @@rolodex.find(params[:id].to_i)
   if @contact
       @contact.first_name = params[:first_name]
       @contact.last_name = params[:last_name]
       @contact.email = params[:email]
       @contact.notes = params[:notes]
-
       redirect to("/contacts")
   else
     raise Sinatra::NotFound
@@ -83,3 +85,17 @@ put "/contacts/id" do
 end
 
 ##### EDITING CONTACT ENDS #####
+
+##### REMOVE CONTACT STARTS #####
+
+delete "/contacts/:id" do
+  @contact = @@rolodex.find(params[:id].to_i)
+  if @contact
+    @@rolodex.remove_contact(@contact)
+    redirect to("/contacts")
+  else
+    raise Sinatra::NotFound
+  end
+end
+
+##### REMOVE CONTACT END #####

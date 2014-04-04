@@ -32,7 +32,7 @@ time, mark, audio, video {
 html, body
 {
   font-family: 'Julius Sans One', sans-serif;
-  background: url('/public/retro-wallpaper-1.jpg') no-repeat fixed; /*center center*/
+  background: url('retro-wallpaper-1.jpg') no-repeat fixed; /*center center*/
   /*background-size: cover;
   -o-background-size: cover;
   -mox-background-size: cover;
@@ -172,7 +172,7 @@ background-color: rgba(27,64,99,0.2);
   margin-left: 40px;
 }
 
-input[type=submit]
+input[type=submit], input[type=button]
 {
   font-family: 'Julius Sans One', sans-serif;
   color: black;
@@ -187,9 +187,11 @@ input[type=submit]
   box-shadow: 0px 0px 5px 0px white;
 }
 
-input[type=submit]:hover
+input[type=submit]:hover, input[type=button]:hover
 {
   background-color: rgba(236, 240, 241, 1);
 }
+
+
 
 
