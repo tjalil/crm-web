@@ -143,11 +143,6 @@ background-color: rgba(27,64,99,0.2);
   font-size: 1rem;
 }
 
-#notes_input
-{
-  height: 100px;
-}
-
 #new_contact_btns
 {
   text-align: center;
@@ -251,7 +246,30 @@ input[type=button]
   font-size: 1rem;
 }
 
-.basic_box #notes
+
+#show_first_name_input, #show_last_name_input, #show_email_input, #show_notes_input
 {
-  max-width: 100%;
+  font-family: 'Julius Sans One', sans-serif;
+  margin-left: 40px;
+  width: 400px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
 }
+
+.basic_box #show_legend
+{
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(27,64,99,0.2);
+  font-size: 1.5rem;
+  width: 400px;
+  margin-left: 40px;
+}
+
+#notes_input
+{
+  height: 100px;
+}
+

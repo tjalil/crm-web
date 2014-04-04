@@ -2,22 +2,34 @@
   Displaying Contact
 <% end %>
 
-<form class = "basic_box">
+<form action="/contacts" method="POST" class="basic_box">
   <fieldset>
-    <div class="legend">
+    <div class="show_legend">
       <legend>ID: <%= @contact.id %></legend>
     </div>
 
-    <div class="show_name">
-      <strong>Name:</strong> <%= @contact.first_name %> <%= @contact.last_name %>
+    <div id="first_name">
+      <label for="first_name">First Name: </label>
+      <br>
+      <p id="show_first_name_input"><%= @contact.first_name %></p>
     </div>
 
-    <div class="show_email">
-      Email: <%= @contact.email %>
+    <div id="last_name">
+      <label for="last_name">Last Name: </label>
+      <br>
+      <p id="show_last_name_input"><%= @contact.last_name %></p>
     </div>
 
-    <div class="show_notes">
-      Notes: <%= @contact.notes %>
+    <div id="email">
+      <label for="email">Email: </label>
+      <br>
+      <p id="show_email_input"><%= @contact.email %></p>
+    </div>    
+
+    <div id="notes">
+      <label for="notes">Notes: </label>
+      <br>
+      <p id="show_notes_input"><%= @contact.notes %></p>
     </div>
   </fieldset>
 </form>
