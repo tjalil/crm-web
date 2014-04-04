@@ -217,6 +217,7 @@ input[type=button]
   margin-bottom: 2rem;
   text-align: center;
   background-color: rgba(236, 240, 241, 1);
+  border-radius: 5px;
 }
 
 #id_input:focus
