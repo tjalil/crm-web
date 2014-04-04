@@ -5,25 +5,26 @@ require 'sinatra/content_for'
 
 @@rolodex = Rolodex.new
 
-# Temporary fake data so that we always find contact with id 1000.
-@@rolodex.add_contact("Will", "Richman", "will@bitmakerlabs.com", "co-founder")
-
-
 get '/' do
   @create_time = Time.new.strftime("%m-%d-%Y at %H:%M:%S")
   erb :index
 end
 
 get '/contacts' do
-  erb :contacts
+  erb :show_all_contacts
 end
 
 get '/contacts/new' do
   erb :new_contact
 end
 
-get '/contacts/:id' do
-  erb :id
+get "/contacts/:id" do
+  @contact = @@rolodex.find(params[:id].to_i)
+  if @contact 
+    erb :show_contact
+  else
+    raise Sinatra::NotFound
+  end
 end
 
 get '/contacts/:id/edit' do
@@ -38,19 +39,15 @@ get '/contacts/:id/notes' do
   erb :notes
 end
 
-get "/contacts/1000" do
-  @contact = @@rolodex.find(1000)
-  erb :show_contact
-end
-
-post '/contacts/:id' do
-  @@rolodex.find(contact_id)
-  redirect to('/contacts')
-  #need to redirect to either 'edit', 'remove', 'notes'
+post '/contacts/id' do
+  @@rolodex.find(params[:id].to_i)
+  redirect = "/contacts/#{params[:id].to_i}"
+  redirect to(redirect)
+  # need to redirect to either 'edit', 'remove', 'notes'
 end
 
 post '/contacts' do
-  @@rolodex.add_contact(params[:first_name], params[:last_name], params[:email], params[:notes])
+  @@rolodex.add_contact(params[:first_name], params[:last_name], params[:email], params[:notes], params[:create_time])
   redirect to('/contacts')
 end
 

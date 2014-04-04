@@ -2,12 +2,32 @@
   CRM by Taha Jalil
 <% end %>
 
-<p><a href="/contacts/new">Add a contact</a></p>
-<p><a href="/contacts/:id">Display a contact</a></p>
-<p><a href="/contacts/:id/remove">Remove a contact</a></p>
-<p><a href="/contacts/:id/edit">Edit a contact</a></p>
-<p><a href="/contacts">Display all contacts</a></p>
-<p><a href="/contacts">Display all contacts by attributes</a></p>
-<p><a href="/contacts/:id/notes">Add notes for an existing contact</a></p>
+  <div>
+    <a href="/contacts/new">Add a contact</a>
+  </div>
+  <div>
+    <form method="get" action="/contacts/:id">
+    <p>
+      Enter ID to display a contact
+      <input type="text" name="id" id="id_input" required="required" placeholder="ID"/>
+    </p>
+  </form>
+  </div>
+  <div>
+    <a href="/contacts/:id/remove">Remove a contact</a>
+  </div>
+  <div>
+    <a href="/contacts/:id/edit">Edit a contact</a>
+  </div>
+  <div>
+    <a href="/contacts">Display all contacts</a>
+  </div>
+  <div>
+    <a href="/contacts">Display all contacts by attributes</a>
+  </div>
+  <div>
+    <a href="/contacts/:id/notes">Add notes for an existing contact</a>
+  </div>
+
 
   <!-- please complete me with links to other actions -->

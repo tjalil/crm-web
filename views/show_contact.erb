@@ -1,0 +1,8 @@
+<% content_for :title do %>
+  Displaying Contact
+<% end %>
+
+<p><strong>ID:</strong> <%= @contact.id %></p>
+<p><strong>Name:</strong> <%= @contact.first_name %> <%= @contact.last_name %></p>
+<p><strong>Email:</strong> <%= @contact.email %></p>
+<p><strong>Notes:</strong> <%= @contact.notes %></p>
