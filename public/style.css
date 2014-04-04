@@ -150,7 +150,6 @@ background-color: rgba(27,64,99,0.2);
 
 #new_contact_btns
 {
-  /*margin-left: 20px;*/
   text-align: center;
   margin-top: 20px;
 }
@@ -234,12 +233,25 @@ input[type=button]
 
 .delete_contact_btn
 {
+  margin-top: 1rem;
+  margin-left: 50px;
   float: left;
-
 }
 .edit_contact_btn
 {
+  margin-top: 1rem;
   clear: right;
+  margin-left: 10px;
 }
 
+.show_name, .show_email, .show_notes
+{
+  margin-left: 20px;
+  height: 2rem;
+  font-size: 1rem;
+}
 
+.basic_box #notes
+{
+  max-width: 100%;
+}

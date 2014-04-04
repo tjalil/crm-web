@@ -2,11 +2,25 @@
   Displaying Contact
 <% end %>
 
-<p><strong>ID:</strong> <%= @contact.id %></p>
-<p><strong>Name:</strong> <%= @contact.first_name %> <%= @contact.last_name %></p>
-<p><strong>Email:</strong> <%= @contact.email %></p>
-<p><strong>Notes:</strong> <%= @contact.notes %></p>
+<form class = "basic_box">
+  <fieldset>
+    <div class="legend">
+      <legend>ID: <%= @contact.id %></legend>
+    </div>
 
+    <div class="show_name">
+      <strong>Name:</strong> <%= @contact.first_name %> <%= @contact.last_name %>
+    </div>
+
+    <div class="show_email">
+      Email: <%= @contact.email %>
+    </div>
+
+    <div class="show_notes">
+      Notes: <%= @contact.notes %>
+    </div>
+  </fieldset>
+</form>
 
 <form class="delete_contact_btn" action="/contacts/<%= @contact.id %>" method="POST">
   <input type="hidden" name="_method" value="delete">
