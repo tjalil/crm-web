@@ -6,16 +6,17 @@ require'data_mapper'
 DataMapper.setup(:default, "sqlite3:database.sqlite3")
 
 class Contact
+  include DataMapper::Resource
 
-  attr_accessor :id, :first_name, :last_name, :email, :notes, :time_created
+  property :id, Serial
+  property :first_name, String
+  property :last_name, String
+  property :email, String
+  property :notes, String
+  property :time_created, String
 
-  def initialize(first_name, last_name, email, notes, time_created)
-    @first_name = first_name.capitalize
-    @last_name = last_name.capitalize
-    @email = email
-    @notes = notes.capitalize
-    @time_created = time_created
-  end
+  DataMapper.finalize
+  DataMapper.auto_upgrade!
 end
 
 @@rolodex = Rolodex.new
