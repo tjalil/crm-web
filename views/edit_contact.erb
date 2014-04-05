@@ -25,14 +25,20 @@
     <div id="email">
       <label for="email">Email: </label>
       <br>
-      <input type="text" id="last_name_input" name="email" value="<%= @contact.email %>">
+      <input type="text" id="email_input" name="email" value="<%= @contact.email %>">
     </div>    
 
     <div id="notes">
       <label for="notes">Notes: </label>
       <br>
-      <input type="text" id="last_name_input" name="notes" value="<%= @contact.notes %>">
+      <input type="text" id="notes_input" name="notes" value="<%= @contact.notes %>">
     </div>
+
+    <div id="time_created">
+      <label for="email">Created: </label>
+      <br>
+      <p id="time_created_input"><%= @contact.time_created %></p>
+    </div> 
    
     <div id="new_contact_btns">
       <input type="submit" name="Submit" value="Save Changes">

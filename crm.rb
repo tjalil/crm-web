@@ -2,7 +2,6 @@ require_relative 'rolodex'
 require_relative 'contact'
 require 'sinatra'
 require 'sinatra/content_for'
-require 'debugger'
 
 @@rolodex = Rolodex.new
 

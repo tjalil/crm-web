@@ -1,13 +1,56 @@
+
 <% content_for :title do %>
   All Contacts
 <% end %>
 
-<% @@rolodex.contacts.each do |contact| %>
-  <p><strong>ID:</strong> <%= contact.id %></p>
-  <p><strong>Name:</strong> <%= contact.first_name %> <%= contact.last_name %></p>
-  <p><strong>Email:</strong> <%= contact.email %></p>
-  <p><strong>Notes:</strong> <%= contact.notes %></p>
-  <p>Contact created on <%= contact.time_created %></p>
-  <p>----------</p>
-<% end %>
+<div class="scrolling_box">
+  <% @@rolodex.contacts.each do |contact| %>
+
+  <form class="basic_box">
+      <fieldset>
+        
+        <div class="show_legend">
+          <legend>ID: <%= contact.id %></legend>
+        </div>
+
+        <div id="first_name">
+          <label for="first_name">First Name: </label>
+          <br>
+          <p id="show_first_name_input"><%= contact.first_name %></p>
+        </div>
+
+        <div id="last_name">
+          <label for="last_name">Last Name: </label>
+          <br>
+          <p id="show_last_name_input"><%= contact.last_name %></p>
+        </div>
+
+        <div id="email">
+          <label for="email">Email: </label>
+          <br>
+          <p id="show_email_input"><%= contact.email %></p>
+        </div>    
+
+        <div id="notes">
+          <label for="notes">Notes: </label>
+          <br>
+          <p id="show_notes_input"><%= contact.notes %></p>
+        </div>
+
+        <div id="time_created">
+          <label for="email">Created: </label>
+          <br>
+          <p id="time_created_input"><%= contact.time_created %></p>
+        </div> 
+
+      </fieldset>
+    </form>
+
+  <% end %> 
+</div>
+
+<div class="scroll_btn">
+  <input type="button" class="show_scroll_btn" name="scroll button" value="scroll down to view more contacts">
+</div>
+
 
