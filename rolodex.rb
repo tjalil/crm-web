@@ -7,10 +7,9 @@ class Rolodex
     @contacts = []
   end
 
-  def add_contact(first_name, last_name, email, notes, time_created)
-    contact = Contact.new(first_name, last_name, email, notes, time_created)
+  def add_contact(first_name, last_name, email, notes, created_at)
+    contact = Contact.new(first_name, last_name, email, notes, created_at)
     contact.id = Rolodex.get_id
-    contact.time_created = Time.new.strftime("%m-%d-%Y at %H:%M:%S")
     @contacts << contact
   end
 

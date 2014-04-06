@@ -1,7 +1,8 @@
 require_relative 'rolodex'
 require 'sinatra'
 require 'sinatra/content_for'
-require'data_mapper'
+require 'data_mapper'
+require 'dm-timestamps'
 
 DataMapper.setup(:default, "sqlite3:database.sqlite3")
 
@@ -13,7 +14,9 @@ class Contact
   property :last_name, String
   property :email, String
   property :notes, String
-  property :time_created, String
+  property :created_at, DateTime
+  #property :updated_at, DateTime
+
 
   DataMapper.finalize
   DataMapper.auto_upgrade!
@@ -22,20 +25,12 @@ end
 @@rolodex = Rolodex.new
 
 get '/' do
-  @create_time = Time.new.strftime("%m-%d-%Y at %H:%M:%S")
   erb :index
 end
 
 get '/contacts' do
+  @contacts = Contact.all
   erb :show_all_contacts
-end
-
-get '/contacts/:id/remove' do
-  erb :remove
-end
-
-get '/contacts/:id/notes' do
-  erb :notes
 end
 
 ##### ADDING A CONTACT STARTS #####
@@ -45,7 +40,13 @@ get '/contacts/new' do
 end
 
 post '/contacts' do
-  @@rolodex.add_contact(params[:first_name], params[:last_name], params[:email], params[:notes], params[:create_time])
+  contact = Contact.create(
+    first_name: params[:first_name],
+    last_name: params[:last_name],
+    email: params[:email],
+    notes: params[:notes],
+    created_at: params[:created_at])
+    #updated_at: params[:updated_at])
   redirect to('/contacts')
 end
 
@@ -54,7 +55,7 @@ end
 ##### SEARCH CONTACT BY ID STARTS #####
 
 get "/contacts/:id" do
-  @contact = @@rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id].to_i)
   if @contact 
     erb :show_contact
   else
@@ -63,7 +64,7 @@ get "/contacts/:id" do
 end
 
 post '/contacts/id' do
-  @@rolodex.find(params[:id].to_i)
+  Contact.get(params[:id].to_i)
   redirect = "/contacts/#{params[:id].to_i}"
   redirect to(redirect)
 end
@@ -78,7 +79,7 @@ post '/contacts/edit' do
 end
 
 get '/contacts/:id/edit' do
-  @contact = @@rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id].to_i)
   if @contact
     erb :edit_contact
   else
@@ -87,7 +88,7 @@ get '/contacts/:id/edit' do
 end
 
 put "/contacts/:id" do
-  @contact = @@rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id].to_i)
   if @contact
       @contact.first_name = params[:first_name]
       @contact.last_name = params[:last_name]
@@ -104,7 +105,7 @@ end
 ##### REMOVE CONTACT STARTS #####
 
 delete "/contacts/:id" do
-  @contact = @@rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id].to_i)
   if @contact
     @@rolodex.remove_contact(@contact)
     redirect to("/contacts")

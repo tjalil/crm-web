@@ -241,7 +241,7 @@ input[type=button]
 }
 
 
-#show_first_name_input, #show_last_name_input, #show_email_input, #show_notes_input, #time_created_input
+#show_first_name_input, #show_last_name_input, #show_email_input, #show_notes_input, #created_at_input
 {
   font-family: 'Julius Sans One', sans-serif;
   margin-left: 40px;
