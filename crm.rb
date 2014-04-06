@@ -1,4 +1,3 @@
-require_relative 'rolodex'
 require 'sinatra'
 require 'sinatra/content_for'
 require 'data_mapper'
@@ -16,13 +15,10 @@ class Contact
   property :notes, String
   property :created_at, DateTime
   #property :updated_at, DateTime
-
-
-  DataMapper.finalize
-  DataMapper.auto_upgrade!
 end
 
-@@rolodex = Rolodex.new
+DataMapper.finalize
+DataMapper.auto_upgrade!
 
 get '/' do
   erb :index
@@ -94,6 +90,7 @@ put "/contacts/:id" do
       @contact.last_name = params[:last_name]
       @contact.email = params[:email]
       @contact.notes = params[:notes]
+      @contact.save
       redirect to("/contacts")
   else
     raise Sinatra::NotFound
@@ -107,7 +104,7 @@ end
 delete "/contacts/:id" do
   @contact = Contact.get(params[:id].to_i)
   if @contact
-    @@rolodex.remove_contact(@contact)
+    @contact.destroy
     redirect to("/contacts")
   else
     raise Sinatra::NotFound
